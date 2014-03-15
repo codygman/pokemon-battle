@@ -3,8 +3,28 @@ import Network.HTTP.Conduit
 import qualified Data.ByteString.Lazy as L
 import Control.Monad.Random
 
--- what is a move? no one knows!
-data Move = Move { moveName :: String } deriving (Show)
+data Ability = Ability 
+    { 
+      aName :: String
+    , aUri :: String
+    } deriving (Show)
+
+data Move = Move 
+    { learnType :: String
+    , moveName :: String
+    , moveUri :: String
+    } deriving (Show)
+      
+data Pokemon = Pokemon { 
+      abilities :: [Ability]
+    , attack :: Int
+    , catch_rate :: Int
+    , created :: String
+    , defense :: String
+    , exp :: Int
+    , hp :: Int
+    , moves :: [Move]
+    } deriving (Show)
 
 -- generates one of the ORIGINAL AND ONLY 150 random pokemon 
 randomPokemon :: IO Int
