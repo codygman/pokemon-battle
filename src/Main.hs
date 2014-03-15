@@ -15,7 +15,7 @@ getPokemon :: Int -> IO L.ByteString
 getPokemon p = simpleHttp $ "http://pokeapi.co/api/v1/pokemon/" ++ show p ++ "/"
 
 getMoves :: L.ByteString -> [Move]
-getMoves p = [Move ""]
+getMoves p = undefined
  
 main = putStrLn $ "You have " ++ show hp ++ " HP"
     where hp = 200
